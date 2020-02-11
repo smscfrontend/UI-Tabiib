@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0;
+	font-weight: 300;
+	color: $text-dark;
+}
+
+p {
+	color: $text-dark;
+}
+
+img {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
+	-webkit-touch-callout: none;
+	user-drag: none;
+}
+
+span:focus {
+	outline: 0;
+}
+
+hr {
+	border-top: 1px solid lighten($grey, 50%);
+}
+
+a,
+i,
+span,
+br,
+img,
+label,
+button,
+input,
+textarea canvas,
+iframe,
+embed,
+picture,
+select,
+video,
+svg {
+	display: inline-block;
+	font-family: $font-family;
+}
+
+textarea {
+	width: 100%;
+	border: 1px solid transparent;
+	font-size: inherit;
+	font-family: inherit;
+	padding: 1.5rem 1rem;
+	&:focus {
+		outline: 0;
+	}
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.icon:focus {
+	outline: 0;
+}
+
+input:focus,
+button:focus {
+	outline: 0;
+}
+
+button {
+	backface-visibility: hidden;
+	background: transparent;
+	border: 0;
+	&::-moz-focus-inner {
+		border: 0;
+	}
+}

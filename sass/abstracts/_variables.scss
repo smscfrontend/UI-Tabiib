@@ -1,0 +1,40 @@
+// Color Codes
+
+// Brand Colors
+$primary: #119ab5;
+$secondary: #4882d1;
+$teritary: #33353f;
+
+// Base colors
+$white: #fff;
+$grey: #888888;
+
+// Text Colors
+$text-dark: #323232;
+$text-light: $grey;
+
+// Heading Colors
+$primary-heading: $secondary;
+$secondary-heading: $primary;
+
+// Buttons Colors
+$primary-button: $primary;
+$secondary-button: $white;
+
+// Fonts
+$font-family: 'Poppins', sans-serif;
+
+// Shadows
+$box-shadow: 0 2px 4px rgba(50, 50, 93, .1);
+$box-shadow-btn: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+$box-shadow-depth: 0 50px 100px -20px rgba(50, 50, 93, .25), 0 30px 60px -30px rgba(0, 0, 0, .1),
+	0 -18px 60px -10px rgba(0, 0, 0, .025);
+
+// Offers Images Naming Variable
+$offers: offer1, offer2, offer3, offer4;
+
+$benefit-card-colors: #b1f0f1, #e0eeb4, #b7cfef;
+
+// $benefit-card1-bg-color: #b1f0f1;
+// $benefit-card2-bg-color: #e0eeb4;
+// $benefit-card3-bg-color: #b7cfef;

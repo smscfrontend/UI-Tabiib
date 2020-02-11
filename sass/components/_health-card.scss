@@ -1,0 +1,34 @@
+.health-card {
+	background-color: $white;
+	padding: 3rem;
+	min-width: 30rem;
+	min-height: 30rem;
+	display: inline-block;
+	box-shadow: $box-shadow;
+	border-radius: .5rem;
+
+	hr {
+		margin: 3rem 0;
+	}
+
+	&--title {
+		color: $primary;
+		font-weight: 600;
+		font-size: 2.6rem;
+		margin-bottom: 2rem;
+	}
+
+	&--list {
+		font-size: 1.3rem;
+		li {
+			padding: .5rem;
+		}
+	}
+
+	&--content {
+		font-weight: 600;
+		font-size: 1.4rem;
+		margin-bottom: 2rem;
+		line-height: 185%;
+	}
+}

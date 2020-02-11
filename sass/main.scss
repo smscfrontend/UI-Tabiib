@@ -1,0 +1,24 @@
+// Abstract Modules
+@import './abstracts/variables';
+@import './abstracts/mixin';
+
+// Base Modules 💢
+@import './base/reset';
+@import './base/base';
+@import './base/keyframes';
+@import './base/typography.scss';
+
+// Components Modules
+@import './components/accordion';
+@import './components/benefit-card';
+@import './components/buttons';
+@import './components/health-card';
+
+// Layouts Modules
+@import './layouts/footer';
+@import './layouts/header';
+@import './layouts/navigation';
+@import './layouts/lang-arabic';
+
+// Pages Modules
+@import './pages/tabiib-plus';

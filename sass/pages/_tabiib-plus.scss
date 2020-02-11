@@ -1,0 +1,401 @@
+.offers,
+.partners,
+.faq {
+	text-align: center;
+	margin: 0 0 10rem;
+}
+
+// Your Health CSS
+.your-health {
+	background-image: url('../assets/your-health.png');
+	// background-size: cover;
+	background-repeat: no-repeat;
+	padding: 5rem 0;
+	background-size: contain;
+
+	.heading {
+		margin-bottom: 0;
+	}
+
+	.highlighted {
+		left: 0;
+		margin-top: 1rem;
+	}
+
+	&__representation {
+		text-align: center;
+		img {
+			width: 45rem;
+		}
+	}
+
+	&__content {
+		p {
+			margin: 2rem 0;
+		}
+	}
+}
+
+.more-health {
+	background-image: url('../assets/more-health.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 10rem;
+	height: 100vh;
+
+	.container {
+		padding-top: 10rem;
+	}
+
+	.highlighted {
+		left: 0;
+	}
+
+	.purchase-plan {
+		margin-top: 2rem;
+
+		@include respond(regular-desktop) {
+			margin-top: 5rem;
+		}
+	}
+
+	.health-card {
+		margin-bottom: -10rem;
+		margin-right: 3rem;
+		min-width: calc(30rem - 3rem);
+
+		@include respond(regular-desktop) {
+			min-width: calc(20rem - 3rem);
+		}
+	}
+}
+
+.offers {
+	&__container {
+		margin-top: 3rem;
+		margin-bottom: 5rem;
+	}
+
+	@each $offer in $offers {
+		$i: index($offers, $offer);
+		&-#{$offer} {
+			background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('../assets/#{$offer}.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			transform: translateY(#{$i*4}rem);
+			opacity: 0;
+
+			&.animated {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__item {
+		// margin: 1rem;
+		height: 25rem;
+		box-shadow: $box-shadow;
+		border-radius: .3rem;
+		position: relative;
+		transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	&__content {
+		position: absolute;
+		bottom: 2%;
+		left: 5%;
+		color: $white;
+		font-weight: 400;
+		text-align: left;
+		width: calc(100% - 5%);
+		h5 {
+			width: 90%;
+			color: inherit;
+			background: rgba(0, 0, 0, .3);
+			border-radius: 25rem;
+			padding: 0 1rem;
+			margin-bottom: .5rem;
+			font-weight: inherit;
+		}
+		span {
+			font-size: 1.2rem;
+			display: block;
+			padding: 0 1rem;
+		}
+	}
+}
+
+// Benefits Css
+
+.benefits {
+	background-image: url('../assets/benefits.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 20vh 0;
+	margin-bottom: 10rem;
+
+	&__container {
+		margin-top: 2rem;
+	}
+
+	&__list {
+		margin: 2rem 0;
+		font-size: 1.4rem;
+
+		li {
+			margin: .5rem 0;
+			font-weight: 500;
+
+			&::before {
+				content: '';
+				background-image: url('../assets/tick.svg');
+				display: inline-block;
+				width: 1.3rem;
+				height: 1.3rem;
+				margin: 0 1rem;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	&__cards {
+		height: 100%;
+		position: relative;
+		.benefit-card {
+			position: absolute;
+		}
+
+		.benefit-card-1 {
+			img {
+				width: 15rem;
+				margin: 0 auto 1.5rem;
+			}
+			p {
+				font-size: 1.2rem;
+			}
+		}
+		.benefit-card-2 {
+			top: -65%;
+			right: 15%;
+			padding: 1.5rem 3rem;
+
+			@include respond(regular-desktop) {
+				right: 5%;
+			}
+
+			h4 {
+				font-size: 1.4rem;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+
+			h3 {
+				font-size: 2.8rem;
+				font-weight: 600;
+				color: $secondary;
+				line-height: 2.5rem;
+
+				span {
+					color: $text-dark;
+					font-size: 1.3rem;
+				}
+			}
+		}
+		.benefit-card-3 {
+			right: 15%;
+			bottom: -25%;
+			color: $white;
+			text-align: center;
+
+			@include respond(regular-desktop) {
+				right: 5%;
+			}
+
+			img {
+				width: 9rem;
+			}
+
+			h3 {
+				font-size: 2.4rem;
+				font-weight: 500;
+				color: inherit;
+			}
+
+			h6 {
+				font-size: 1.3rem;
+				color: inherit;
+			}
+		}
+	}
+}
+
+// Intersted Subscribe CSS
+.subscribe {
+	background-image: url('../assets/subscribe.png');
+	background-repeat: no-repeat;
+	height: 100vh;
+	background-size: cover;
+	background-position: bottom center;
+	margin-bottom: 10rem;
+
+	.highlighted {
+		left: 0;
+	}
+
+	// &__subscribe {
+	// }
+
+	&__cards {
+		&__container {
+			position: relative;
+			width: 30rem;
+			margin: 0 auto;
+
+			img {
+				width: 30rem;
+				position: absolute;
+				box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.05);
+				border-radius: 1rem;
+				opacity: 0;
+
+				&.animated {
+					animation-name: fadeIn;
+					animation-duration: .3s;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+					animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+				}
+
+				@include respond(regular-desktop) {
+					width: 33rem;
+				}
+			}
+			img:nth-child(1) {
+				top: 15%;
+				left: 35%;
+				transform: scale(.8);
+				animation-delay: 1s;
+
+				@include respond(regular-desktop) {
+					left: 20%;
+				}
+			}
+			img:nth-child(2) {
+				top: 15%;
+				left: 25%;
+				transform: scale(.9);
+				animation-delay: 3s;
+				@include respond(regular-desktop) {
+					left: 10%;
+				}
+			}
+			img:nth-child(3) {
+				top: 15%;
+				left: 15%;
+				animation-delay: 5s;
+				@include respond(regular-desktop) {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	&__head {
+		height: 40vh;
+
+		h1 {
+			font-size: 3.2rem;
+			font-weight: 400;
+			margin-top: 5rem;
+		}
+	}
+
+	&__body {
+		ul {
+			margin-bottom: 3rem;
+			li {
+				font-size: 1.6rem;
+				padding: 1rem 0;
+				font-weight: 500;
+				&::before {
+					content: '';
+					background-image: url('../assets/tick.svg');
+					display: inline-block;
+					width: 1.5rem;
+					height: 1.5rem;
+					margin-right: 1rem;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		span {
+			font-size: 1.4rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+// Partners Css
+.partners {
+	.container {
+		margin-top: 5rem;
+		margin-bottom: 2rem;
+	}
+
+	img {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+}
+
+// FAQ Css
+.faq {
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 5rem 0;
+
+		&--block {
+			flex-basis: 45%;
+			margin-bottom: 2rem;
+		}
+
+		// & .accordion--item {
+		// 	height: 100%;
+		// }
+	}
+}
+
+// About Tabiib Plus
+.tabiib-plus {
+	background: transparent;
+	padding: 10rem 0;
+	position: relative;
+	background-image: url('../assets/about-tabiib-plus.png');
+	// background-size: cover;
+	background-color: #f4f5f9;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top center;
+	&__container {
+		width: 55%;
+
+		p {
+			font-weight: 500;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__card {
+		position: absolute;
+		right: 7%;
+		bottom: 0;
+
+		@include respond(regular-desktop) {
+			right: 15%;
+		}
+	}
+}

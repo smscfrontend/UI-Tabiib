@@ -1,0 +1,54 @@
+.banner-primary-heading {
+	color: $secondary;
+	text-transform: uppercase;
+	font-size: 4rem;
+	font-weight: 600;
+	letter-spacing: .05rem;
+}
+
+.banner-secondary-heading {
+	color: $primary;
+	text-transform: capitalize;
+	font-weight: 300;
+	font-size: 3.5rem;
+}
+
+p {
+	font-size: 1.4rem;
+	font-weight: 500;
+	line-height: 190%;
+}
+
+.heading {
+	font-size: 2.3rem;
+	font-weight: 500;
+
+	&--primary {
+		color: $primary;
+		font-size: 3.3rem;
+	}
+	&--secondary {
+		color: $primary;
+		margin-bottom: 1rem;
+	}
+}
+
+.highlighted {
+	height: .4rem;
+	background-color: $primary;
+	border-radius: 25rem;
+	width: 3rem;
+	position: relative;
+	margin-top: 2.5rem;
+	left: -.5rem;
+	&::after {
+		content: '';
+		position: absolute;
+		display: inline-block;
+		height: .4rem;
+		width: .5rem;
+		background-color: $primary;
+		border-radius: 25rem;
+		right: -1rem;
+	}
+}

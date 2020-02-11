@@ -1,0 +1,237 @@
+@mixin chatbubblecurve {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 3rem;
+	bottom: -10px;
+	border-left: 10px solid transparent;
+	border-right: 2px solid transparent;
+	border-top: 10px solid $white;
+
+	// content: "";
+	// box-sizing: initial;
+	// border-color: rgba(0, 0, 0, 0.4);
+	// border-radius: 50%;
+	// border-style: solid;
+	// border-width: 0 25px;
+	// position: absolute;
+	// height: 43px;
+	// width: 53px;
+	// bottom: -4px;
+	// right: -78px;
+	// clip: rect(18px, 37px, 42px, 0px);
+	// // z-index: -1;
+	// border-color: $white;
+}
+
+.footer {
+	background-image: url('../assets/footer-bg.png');
+	background-size: cover;
+	height: 90vh;
+	padding: 5rem 0;
+	position: relative;
+	.map-area {
+		position: absolute;
+		top: 0;
+		left: 0;
+		&__block {
+			position: relative;
+			width: 45rem;
+
+			img {
+				width: 100%;
+			}
+
+			.dot1 {
+				left: 23%;
+				top: 11%;
+			}
+			.dot2 {
+				left: 26%;
+				top: 15%;
+			}
+			.dot3 {
+				left: 30%;
+				top: 18%;
+			}
+			.dot4 {
+				left: 20%;
+				top: 20%;
+			}
+			.dot5 {
+				left: 54%;
+				top: 25%;
+			}
+		}
+	}
+
+	&__block {
+		display: flex;
+
+		h3 {
+			font-size: 1.6rem;
+			font-weight: 600;
+			margin-bottom: 1rem;
+		}
+
+		label {
+			font-size: 1.3rem;
+			font-weight: 500;
+		}
+
+		input {
+			padding: 1rem;
+			border: 0;
+			border-radius: .3rem;
+			margin: 1rem 0 2rem;
+			width: 80%;
+			font-size: 1.3rem;
+		}
+
+		ul {
+			li {
+				font-size: 1.3rem;
+				margin-bottom: 1rem;
+				a {
+					color: $text-dark;
+					font-weight: 500;
+				}
+			}
+		}
+
+		div:nth-child(2),
+		div:nth-child(3),
+		div:nth-child(4) {
+			flex-basis: 35%;
+		}
+	}
+
+	&__patients {
+		position: absolute;
+		text-align: right;
+		bottom: 10%;
+		right: 10%;
+		width: 70%;
+		&__block {
+			position: relative;
+			img.patients {
+				width: 50rem;
+			}
+
+			.other-user1-feedback-message,
+			.other-user2-feedback-message {
+				text-align: center;
+				position: absolute;
+				background-color: $white;
+				border-radius: 1.5rem;
+				padding: 1.8rem 0;
+				min-width: 12rem;
+				font-size: 1.3rem;
+				font-weight: 500;
+				color: $primary;
+				// right: 0;
+
+				transform: scale(0);
+				transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+				img {
+					width: 1.5rem;
+					margin-left: .5rem;
+					vertical-align: sub;
+				}
+
+				&::after {
+					@include chatbubblecurve;
+				}
+
+				&.animated {
+					transform: scale(1);
+				}
+			}
+
+			.other-user1-feedback-message {
+				right: 28%;
+				top: -20%;
+
+				span {
+					img {
+						width: 2rem;
+						animation: tada linear 1s infinite;
+					}
+				}
+			}
+			.other-user2-feedback-message {
+				right: 0;
+				top: -35%;
+
+				span {
+					img {
+						width: 2rem;
+						animation: waiting linear 1s infinite;
+					}
+				}
+			}
+
+			.single-patient {
+				position: absolute;
+				top: -1rem;
+				left: 0;
+
+				img.patient {
+					width: 10rem;
+				}
+			}
+
+			.tabiib-user-feedback-message {
+				text-align: center;
+				position: absolute;
+				top: -35%;
+				left: -15%;
+				background-color: $white;
+				border-radius: 1.5rem;
+				padding: 1.8rem 0;
+				min-width: 12rem;
+				font-size: 1.3rem;
+				font-weight: 500;
+				color: $primary;
+				transform: scale(0);
+				transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+				img {
+					width: 1.5rem;
+					margin-left: .5rem;
+					vertical-align: sub;
+				}
+
+				span {
+					img {
+						width: 2rem;
+						animation: bounce 2s infinite;
+					}
+				}
+
+				&::after {
+					@include chatbubblecurve;
+				}
+
+				&.animated {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+}
+.copyright {
+	text-align: center;
+	padding: 2rem 0;
+	background-color: $teritary;
+	border-top: 1px solid lighten($teritary, 10%);
+
+	p {
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		color: $text-light;
+		letter-spacing: .05rem;
+	}
+}

@@ -1,0 +1,186 @@
+.lang-arabic {
+	// Navigation Section
+	.nav__primary__container,
+	.nav__secondary__container {
+		flex-flow: row-reverse;
+
+		.nav__list {
+			flex-flow: row-reverse;
+
+			li:not(:last-child) {
+				margin-right: 0;
+				margin-left: 3.5rem;
+			}
+		}
+	}
+	// Navigation Section ENDS
+
+	// Intro Section
+	.intro {
+		text-align: right;
+		.row {
+			flex-flow: row-reverse;
+		}
+	}
+	// Intro Section ENDS
+
+	// Your Health Section
+	.your-health {
+		text-align: right;
+		.row {
+			flex-flow: row-reverse;
+		}
+	}
+	// Your Health Section ENDS HERE
+
+	// More Health Section
+	.more-health {
+		text-align: right;
+		background-image: url('../assets/more-health-flip.png');
+
+		.highlighted {
+			left: -1rem;
+		}
+
+		.row {
+			// flex-flow: row-reverse;
+
+			.offset-5 {
+				margin: 0;
+			}
+		}
+
+		.health-card {
+			margin-right: 0;
+			margin-left: 3rem;
+		}
+	}
+	// More Health Section ENDS HERE
+
+	// Offers Section
+	.offers {
+		.row {
+			flex-flow: row-reverse;
+		}
+
+		.offers__content {
+			left: 0;
+			right: 5%;
+			text-align: right;
+
+			h5 {
+				margin-left: auto;
+			}
+		}
+	}
+	// Offers Section ENDS HERE
+
+	// Beneftis Sections
+	.benefits {
+		background-image: url('../assets/benefits-flip.png');
+		text-align: right;
+
+		.highlighted {
+			left: -1rem;
+		}
+
+		.row {
+			flex-flow: row-reverse;
+		}
+
+		&__list {
+			li::before {
+				display: none;
+			}
+			li::after {
+				content: '';
+				background-image: url('../assets/tick.svg');
+				display: inline-block;
+				width: 1.5rem;
+				height: 1.5rem;
+				margin-left: 1rem;
+				vertical-align: middle;
+			}
+		}
+	}
+	// Beneftis Sections ENDS HERE
+
+	// Subscribe to plan section
+	.subscribe {
+		text-align: right;
+		background-image: url('../assets/subscribe-flip.png');
+
+		.highlighted {
+			left: -1rem;
+		}
+
+		.row {
+			flex-flow: row-reverse;
+		}
+
+		.subscribe__cards__container {
+			img:first-child {
+				left: 15%;
+			}
+
+			img:nth-child(2) {
+			}
+
+			img:last-child {
+				left: 35%;
+			}
+		}
+
+		.subscribe__body {
+			li {
+				&::before {
+					display: none;
+				}
+				&::after {
+					content: '';
+					background-image: url('../assets/tick.svg');
+					display: inline-block;
+					width: 1.5rem;
+					height: 1.5rem;
+					margin-left: 1rem;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	// Subscribe to plan section ENDS HERE
+
+	// FAQ section
+
+	.faq {
+		&__container {
+			text-align: right;
+			flex-flow: row-reverse;
+			flex-wrap: wrap;
+		}
+
+		.accordion a::after {
+			right: 0;
+			left: 1rem;
+			float: left;
+		}
+	}
+
+	// FAQ section ENDS HERE
+
+	// Tabiib Plus Section
+	.tabiib-plus {
+		text-align: right;
+	}
+
+	// Tabiib Plus Section ENDS HERE
+
+	// Footer Section
+
+	.footer {
+		&__block__item {
+			text-align: right;
+		}
+	}
+	// Footer Section ENDS HERE
+}

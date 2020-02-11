@@ -1,0 +1,24 @@
+.button {
+	color: $white;
+	min-width: 13rem;
+	text-align: center;
+	padding: .8rem 0;
+	border-radius: 2.5rem;
+	font-size: 1.3rem;
+	border: 1px solid transparent;
+	&--primary {
+		background-color: $primary;
+		color: $white;
+		box-shadow: $box-shadow-btn;
+	}
+
+	&--secondary {
+		background-color: #787d96;
+	}
+
+	&--outline {
+		border: 1px solid $primary;
+		background-color: $white;
+		color: $primary;
+	}
+}
