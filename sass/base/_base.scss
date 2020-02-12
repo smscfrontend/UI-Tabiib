@@ -1,18 +1,22 @@
 html {
-	font-size: 62.5%;
-	scroll-behavior: smooth;
-	height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  height: 100%;
 
-	@include respond(regular-desktop) {
-		font-size: 70%;
-	}
+  @include respond(basic-desktop) {
+    font-size: 60%;
+  }
+
+  @include respond(regular-desktop) {
+    font-size: 70%;
+  }
 }
 
 body {
-	box-sizing: border-box;
-	font-family: $font-family;
-	color: $text-dark;
-	font-size: 1.6rem;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: $font-family;
+  color: $text-dark;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

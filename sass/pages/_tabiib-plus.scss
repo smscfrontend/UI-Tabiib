@@ -1,401 +1,652 @@
 .offers,
 .partners,
 .faq {
-	text-align: center;
-	margin: 0 0 10rem;
+  text-align: center;
+  margin: 0 0 10rem;
 }
 
 // Your Health CSS
 .your-health {
-	background-image: url('../assets/your-health.png');
-	// background-size: cover;
-	background-repeat: no-repeat;
-	padding: 5rem 0;
-	background-size: contain;
+  background-image: url("../assets/your-health.png");
+  // background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5rem 0;
+  background-size: contain;
 
-	.heading {
-		margin-bottom: 0;
-	}
+  .heading {
+    margin-bottom: 0;
+  }
 
-	.highlighted {
-		left: 0;
-		margin-top: 1rem;
-	}
+  .highlighted {
+    left: 0;
+    margin-top: 1rem;
+  }
 
-	&__representation {
-		text-align: center;
-		img {
-			width: 45rem;
-		}
-	}
+  &__representation {
+    text-align: center;
+    img {
+      width: 45rem;
+    }
+  }
 
-	&__content {
-		p {
-			margin: 2rem 0;
-		}
-	}
+  &__content {
+    p {
+      margin: 2rem 0;
+    }
+  }
 }
 
 .more-health {
-	background-image: url('../assets/more-health.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin-bottom: 10rem;
-	height: 100vh;
+  background-image: url("../assets/more-health.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10rem;
+  height: 100vh;
 
-	.container {
-		padding-top: 10rem;
-	}
+  @include respond(basic-desktop) {
+    background-position: 50% center;
+  }
 
-	.highlighted {
-		left: 0;
-	}
+  .container {
+    padding-top: 10rem;
+  }
 
-	.purchase-plan {
-		margin-top: 2rem;
+  .highlighted {
+    left: 0;
+  }
 
-		@include respond(regular-desktop) {
-			margin-top: 5rem;
-		}
-	}
+  .purchase-plan {
+    margin-top: 2rem;
 
-	.health-card {
-		margin-bottom: -10rem;
-		margin-right: 3rem;
-		min-width: calc(30rem - 3rem);
+    @include respond(regular-desktop) {
+      margin-top: 5rem;
+    }
+  }
 
-		@include respond(regular-desktop) {
-			min-width: calc(20rem - 3rem);
-		}
-	}
+  .health-card {
+    margin-bottom: -10rem;
+    margin-right: 3rem;
+    min-width: calc(30rem - 3rem);
+
+    @include respond(regular-desktop) {
+      min-width: calc(20rem - 3rem);
+    }
+  }
 }
 
 .offers {
-	&__container {
-		margin-top: 3rem;
-		margin-bottom: 5rem;
-	}
+  &__container {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
 
-	@each $offer in $offers {
-		$i: index($offers, $offer);
-		&-#{$offer} {
-			background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('../assets/#{$offer}.png');
-			background-size: cover;
-			background-repeat: no-repeat;
-			transform: translateY(#{$i*4}rem);
-			opacity: 0;
+  @each $offer in $offers {
+    $i: index($offers, $offer);
+    &-#{$offer} {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/#{$offer}.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: translateY(#{$i * 4}rem);
+      opacity: 0;
 
-			&.animated {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-	}
+      &.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 
-	&__item {
-		// margin: 1rem;
-		height: 25rem;
-		box-shadow: $box-shadow;
-		border-radius: .3rem;
-		position: relative;
-		transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-	}
+  &__item {
+    // margin: 1rem;
+    height: 25rem;
+    box-shadow: $box-shadow;
+    border-radius: 0.3rem;
+    position: relative;
+    transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
 
-	&__content {
-		position: absolute;
-		bottom: 2%;
-		left: 5%;
-		color: $white;
-		font-weight: 400;
-		text-align: left;
-		width: calc(100% - 5%);
-		h5 {
-			width: 90%;
-			color: inherit;
-			background: rgba(0, 0, 0, .3);
-			border-radius: 25rem;
-			padding: 0 1rem;
-			margin-bottom: .5rem;
-			font-weight: inherit;
-		}
-		span {
-			font-size: 1.2rem;
-			display: block;
-			padding: 0 1rem;
-		}
-	}
+  &__content {
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+    color: $white;
+    font-weight: 400;
+    text-align: left;
+    width: calc(100% - 5%);
+    h5 {
+      width: 90%;
+      color: inherit;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 25rem;
+      padding: 0 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: inherit;
+    }
+    span {
+      font-size: 1.2rem;
+      display: block;
+      padding: 0 1rem;
+    }
+  }
 }
 
 // Benefits Css
 
 .benefits {
-	background-image: url('../assets/benefits.png');
-	background-repeat: no-repeat;
-	background-size: contain;
-	padding: 20vh 0;
-	margin-bottom: 10rem;
+  background-image: url("../assets/benefits.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 20vh 0;
+  margin-bottom: 10rem;
 
-	&__container {
-		margin-top: 2rem;
-	}
+  @include respond(basic-desktop) {
+    background-size: cover;
+    background-position: left center;
+  }
 
-	&__list {
-		margin: 2rem 0;
-		font-size: 1.4rem;
+  &__container {
+    margin-top: 2rem;
+  }
 
-		li {
-			margin: .5rem 0;
-			font-weight: 500;
+  &__list {
+    margin: 2rem 0;
+    font-size: 1.4rem;
 
-			&::before {
-				content: '';
-				background-image: url('../assets/tick.svg');
-				display: inline-block;
-				width: 1.3rem;
-				height: 1.3rem;
-				margin: 0 1rem;
-				vertical-align: middle;
-			}
-		}
-	}
+    li {
+      margin: 0.5rem 0;
+      font-weight: 500;
 
-	&__cards {
-		height: 100%;
-		position: relative;
-		.benefit-card {
-			position: absolute;
-		}
+      &::before {
+        content: "";
+        background-image: url("../assets/tick.svg");
+        display: inline-block;
+        width: 1.3rem;
+        height: 1.3rem;
+        margin: 0 1rem;
+        vertical-align: middle;
+      }
+    }
+  }
 
-		.benefit-card-1 {
-			img {
-				width: 15rem;
-				margin: 0 auto 1.5rem;
-			}
-			p {
-				font-size: 1.2rem;
-			}
-		}
-		.benefit-card-2 {
-			top: -65%;
-			right: 15%;
-			padding: 1.5rem 3rem;
+  &__cards {
+    height: 100%;
+    position: relative;
+    .benefit-card {
+      position: absolute;
+    }
 
-			@include respond(regular-desktop) {
-				right: 5%;
-			}
+    .benefit-card-1 {
+      img {
+        width: 15rem;
+        margin: 0 auto 1.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .benefit-card-2 {
+      top: -65%;
+      right: 15%;
+      padding: 1.5rem 3rem;
 
-			h4 {
-				font-size: 1.4rem;
-				font-weight: 500;
-				margin-bottom: 1rem;
-			}
+      @include respond(basic-desktop) {
+        right: 2%;
+      }
 
-			h3 {
-				font-size: 2.8rem;
-				font-weight: 600;
-				color: $secondary;
-				line-height: 2.5rem;
+      @include respond(regular-desktop) {
+        right: 5%;
+      }
 
-				span {
-					color: $text-dark;
-					font-size: 1.3rem;
-				}
-			}
-		}
-		.benefit-card-3 {
-			right: 15%;
-			bottom: -25%;
-			color: $white;
-			text-align: center;
+      h4 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
 
-			@include respond(regular-desktop) {
-				right: 5%;
-			}
+      h3 {
+        font-size: 2.8rem;
+        font-weight: 600;
+        color: $secondary;
+        line-height: 2.5rem;
 
-			img {
-				width: 9rem;
-			}
+        span {
+          color: $text-dark;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .benefit-card-3 {
+      right: 15%;
+      bottom: -25%;
+      color: $white;
+      text-align: center;
 
-			h3 {
-				font-size: 2.4rem;
-				font-weight: 500;
-				color: inherit;
-			}
+      @include respond(basic-desktop) {
+        right: 2%;
+      }
 
-			h6 {
-				font-size: 1.3rem;
-				color: inherit;
-			}
-		}
-	}
+      @include respond(regular-desktop) {
+        right: 5%;
+      }
+
+      img {
+        width: 9rem;
+      }
+
+      h3 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: inherit;
+      }
+
+      h6 {
+        font-size: 1.3rem;
+        color: inherit;
+      }
+    }
+  }
 }
 
 // Intersted Subscribe CSS
 .subscribe {
-	background-image: url('../assets/subscribe.png');
-	background-repeat: no-repeat;
-	height: 100vh;
-	background-size: cover;
-	background-position: bottom center;
-	margin-bottom: 10rem;
+  background-image: url("../assets/subscribe.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: bottom center;
+  margin-bottom: 10rem;
 
-	.highlighted {
-		left: 0;
-	}
+  @include respond(basic-desktop) {
+    height: 90vh;
+  }
 
-	// &__subscribe {
-	// }
+  .highlighted {
+    left: 0;
+  }
 
-	&__cards {
-		&__container {
-			position: relative;
-			width: 30rem;
-			margin: 0 auto;
+  // &__subscribe {
+  // }
 
-			img {
-				width: 30rem;
-				position: absolute;
-				box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.05);
-				border-radius: 1rem;
-				opacity: 0;
+  &__cards {
+    &__container {
+      position: relative;
+      width: 30rem;
+      margin: 0 auto;
 
-				&.animated {
-					animation-name: fadeIn;
-					animation-duration: .3s;
-					animation-iteration-count: 1;
-					animation-fill-mode: forwards;
-					animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-				}
+      img {
+        width: 30rem;
+        position: absolute;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 1rem;
+        opacity: 0;
 
-				@include respond(regular-desktop) {
-					width: 33rem;
-				}
-			}
-			img:nth-child(1) {
-				top: 15%;
-				left: 35%;
-				transform: scale(.8);
-				animation-delay: 1s;
+        &.animated {
+          animation-name: fadeIn;
+          animation-duration: 0.3s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        }
 
-				@include respond(regular-desktop) {
-					left: 20%;
-				}
-			}
-			img:nth-child(2) {
-				top: 15%;
-				left: 25%;
-				transform: scale(.9);
-				animation-delay: 3s;
-				@include respond(regular-desktop) {
-					left: 10%;
-				}
-			}
-			img:nth-child(3) {
-				top: 15%;
-				left: 15%;
-				animation-delay: 5s;
-				@include respond(regular-desktop) {
-					left: 0;
-				}
-			}
-		}
-	}
+        @include respond(regular-desktop) {
+          width: 33rem;
+        }
+      }
+      img:nth-child(1) {
+        top: 15%;
+        left: 35%;
+        transform: scale(0.8);
+        animation-delay: 1s;
 
-	&__head {
-		height: 40vh;
+        @include respond(regular-desktop) {
+          left: 20%;
+        }
+      }
+      img:nth-child(2) {
+        top: 15%;
+        left: 25%;
+        transform: scale(0.9);
+        animation-delay: 3s;
+        @include respond(regular-desktop) {
+          left: 10%;
+        }
+      }
+      img:nth-child(3) {
+        top: 15%;
+        left: 15%;
+        animation-delay: 5s;
+        @include respond(regular-desktop) {
+          left: 0;
+        }
+      }
+    }
+  }
 
-		h1 {
-			font-size: 3.2rem;
-			font-weight: 400;
-			margin-top: 5rem;
-		}
-	}
+  &__head {
+    height: 40vh;
 
-	&__body {
-		ul {
-			margin-bottom: 3rem;
-			li {
-				font-size: 1.6rem;
-				padding: 1rem 0;
-				font-weight: 500;
-				&::before {
-					content: '';
-					background-image: url('../assets/tick.svg');
-					display: inline-block;
-					width: 1.5rem;
-					height: 1.5rem;
-					margin-right: 1rem;
-					vertical-align: middle;
-				}
-			}
-		}
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 400;
+      margin-top: 5rem;
+    }
+  }
 
-		span {
-			font-size: 1.4rem;
-			margin-bottom: 3rem;
-		}
-	}
+  &__body {
+    ul {
+      margin-bottom: 3rem;
+      li {
+        font-size: 1.6rem;
+        padding: 1rem 0;
+        font-weight: 500;
+        &::before {
+          content: "";
+          background-image: url("../assets/tick.svg");
+          display: inline-block;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 1rem;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    span {
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+    }
+  }
 }
 
 // Partners Css
 .partners {
-	.container {
-		margin-top: 5rem;
-		margin-bottom: 2rem;
-	}
+  .container {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
 
-	img {
-		width: 100%;
-		margin-bottom: 2rem;
-	}
+  img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
 // FAQ Css
 .faq {
-	&__container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin: 5rem 0;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5rem 0;
 
-		&--block {
-			flex-basis: 45%;
-			margin-bottom: 2rem;
-		}
+    &--block {
+      flex-basis: 45%;
+      margin-bottom: 2rem;
+    }
 
-		// & .accordion--item {
-		// 	height: 100%;
-		// }
-	}
+    // & .accordion--item {
+    // 	height: 100%;
+    // }
+  }
 }
 
 // About Tabiib Plus
 .tabiib-plus {
-	background: transparent;
-	padding: 10rem 0;
-	position: relative;
-	background-image: url('../assets/about-tabiib-plus.png');
-	// background-size: cover;
-	background-color: #f4f5f9;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: top center;
-	&__container {
-		width: 55%;
+  background: transparent;
+  padding: 10rem 0;
+  position: relative;
+  background-image: url("../assets/about-tabiib-plus.png");
+  // background-size: cover;
+  background-color: #f4f5f9;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top center;
+  @include respond(basic-desktop) {
+    background-size: 130%;
+    background-position: 65% 0%;
+  }
+  &__container {
+    width: 55%;
 
-		p {
-			font-weight: 500;
-			margin-bottom: 2rem;
-		}
-	}
+    p {
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+  }
 
-	&__card {
-		position: absolute;
-		right: 7%;
-		bottom: 0;
+  &__card {
+    position: absolute;
+    right: 8%;
+    bottom: 0;
 
-		@include respond(regular-desktop) {
-			right: 15%;
-		}
-	}
+    @include respond(basic-desktop) {
+      width: 30rem;
+      right: 10%;
+    }
+
+    @include respond(regular-desktop) {
+      right: 15%;
+    }
+
+    @include respond(standard-desktop) {
+      right: 20%;
+    }
+  }
+}
+
+// ====================== Code Integrated by Anil =====================
+
+/* The dropdown container */
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #898989;
+  /* padding: 14px 16px; */
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* custom dropdown css */
+.tab-plus-dropdown {
+  border-radius: 5px;
+  -webkit-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.tab-plus-dropdown li {
+  display: block;
+  padding: 5px 5px;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #444;
+  text-align: left;
+  text-transform: capitalize;
+}
+.tab-plus-dropdown li {
+  /* border-bottom: 1px solid #f1f1f1; */
+  /* width: 250px !important; */
+  padding: 2px 4px;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.050); */
+  margin-right: 0px !important;
+}
+.tab-plus-dropdown li:hover {
+  border-bottom: 2px solid #0b83a3;
+}
+.tab-plus-dropdown li a {
+  display: block;
+  padding: 5px 5px;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #444;
+  text-align: left;
+  text-transform: capitalize;
+}
+.tab-plus-dropdown li a:hover {
+  color: #0b83a3 !important;
+  font-weight: 600;
+}
+.landingmenu_country img {
+  vertical-align: middle;
+}
+.Plus_sign {
+  background: white;
+  color: #0b83a3 !important;
+  border-radius: 22px;
+}
+.Plus_sign li a {
+  display: flex;
+}
+.Plus_sign img {
+  width: 25px;
+  height: 25px;
+  margin-right: 3px;
+  border: 1px solid #eee;
+  border-radius: 100%;
+}
+.plus-list li a:hover {
+  color: #898989;
+}
+.subscribe__body ul li a {
+  color: #00a9b7;
+}
+.partners img {
+  width: 160px;
+  height: 100px;
+
+  @include respond(basic-desktop) {
+    width: 100%;
+    height: initial;
+  }
+}
+.dropdown-content.tab-plus-dropdown:before {
+  font-family: FontAwesome;
+  content: "\f0d8";
+  color: #898989;
+  /* color: #00a9b7; */
+  font-size: 20px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+.bell-icon img {
+  width: 17px;
+  height: 20px;
+  vertical-align: middle;
+}
+.bell-icon {
+  position: relative;
+  display: inline-block;
+}
+.bell-icon .mdl-badge {
+  position: absolute;
+  top: 12px;
+  right: -3px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: #888;
+  /* color: red; */
+}
+/* change password modal pop up custom css */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  margin: 70px auto;
+  /* padding: 20px; */
+  background: #fff;
+  border-radius: 5px;
+  width: 25%;
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+.popup-header {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 20px;
+}
+.popup h2 {
+  margin-top: 0;
+  color: #444;
+  font-size: 16px;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #aaa;
+}
+.popup .close:hover {
+  color: #444;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  padding: 20px;
+}
+.popup-content input::placeholder {
+  color: #ccc;
+}
+.popup-content input {
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0px;
+}
+.popup-content button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+.popup-button {
+  color: #fff;
+  background-color: #00a9b7;
 }

@@ -1,94 +1,99 @@
 .benefit-card {
-	height: 23rem;
-	width: 21rem;
-	box-shadow: $box-shadow;
-	border-radius: .7rem;
-	text-align: center;
-	padding: 3rem;
-	transition: all 2.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 23rem;
+  width: 21rem;
+  box-shadow: $box-shadow;
+  border-radius: 0.7rem;
+  text-align: center;
+  padding: 3rem;
+  transition: all 2.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-	.benefit-card-1 {
-	}
-	.benefit-card-2 {
-		.percentage {
-			position: relative;
-		}
-	}
-	.benefit-card-3 {
-	}
+  @include respond(basic-desktop) {
+    padding: 2rem;
+    // width: 20rem;
+  }
+
+  .benefit-card-1 {
+  }
+  .benefit-card-2 {
+    .percentage {
+      position: relative;
+    }
+  }
+  .benefit-card-3 {
+  }
 }
 
 @each $benefit-card-color in $benefit-card-colors {
-	$i: index($benefit-card-colors, $benefit-card-color);
-	.benefit-card-#{$i} {
-		opacity: 0;
-		background-color: $benefit-card-color;
-		transform: translateY(#{$i*20}rem);
+  $i: index($benefit-card-colors, $benefit-card-color);
+  .benefit-card-#{$i} {
+    opacity: 0;
+    background-color: $benefit-card-color;
+    transform: translateY(#{$i * 20}rem);
 
-		&.animate {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
+    &.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 h2.counter {
-	color: $secondary;
-	font-weight: 500;
-	font-size: 2.8rem;
+  color: $secondary;
+  font-weight: 500;
+  font-size: 2.8rem;
 }
 
 .circle-wrap {
-	width: 150px;
-	height: 150px;
-	background: #c2d5f0;
-	border-radius: 50%;
-	margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  background: #c2d5f0;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .circle-wrap .circle .mask,
 .circle-wrap .circle .fill {
-	width: 150px;
-	height: 150px;
-	position: absolute;
-	border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
 }
 
 .circle-wrap .circle .mask {
-	clip: rect(0px, 150px, 150px, 75px);
+  clip: rect(0px, 150px, 150px, 75px);
 }
 
 .circle-wrap .circle .mask .fill {
-	clip: rect(0px, 75px, 150px, 0px);
-	background-image: linear-gradient(to right top, #4882d1, #5a8dd5, #6b99da, #7ca4de, #8cb0e2);
+  clip: rect(0px, 75px, 150px, 0px);
+  background-image: linear-gradient(to right top, #4882d1, #5a8dd5, #6b99da, #7ca4de, #8cb0e2);
 }
 .circle-wrap .circle .mask.full.animated,
 .circle-wrap .circle .fill.animated {
-	animation: fill ease-in-out 6s;
-	transform: rotate(180deg);
+  animation: fill ease-in-out 6s;
+  transform: rotate(180deg);
 }
 
 @keyframes fill {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(180deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
 
 .circle-wrap .inside-circle {
-	width: 130px;
-	height: 130px;
-	border-radius: 50%;
-	background: #e0eeb4;
-	text-align: center;
-	margin-top: 10px;
-	margin-left: 10px;
-	position: absolute;
-	z-index: 100;
-	font-weight: 700;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #e0eeb4;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

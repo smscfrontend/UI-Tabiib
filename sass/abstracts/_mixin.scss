@@ -1,27 +1,27 @@
 @mixin respond($breakpoint) {
-	// Large devices (desktops, less than 1200px)
-	@if $breakpoint == basic-desktop {
-		@media (min-width: 1199px) {
-			@content;
-		}
-	}
+  // Large devices (desktops, less than 1200px)
+  @if $breakpoint == basic-desktop {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
 
-	@if $breakpoint == regular-desktop {
-		@media (min-width: 1399px) {
-			@content;
-		}
-	}
+  @if $breakpoint == regular-desktop {
+    @media (min-width: 1399px) {
+      @content;
+    }
+  }
 
-	@if $breakpoint == standard-desktop {
-		@media (min-width: 1799px) {
-			@content;
-		}
-	}
+  @if $breakpoint == standard-desktop {
+    @media (min-width: 1799px) {
+      @content;
+    }
+  }
 
-	// Extra Large devices
-	@if $breakpoint == large-desktop {
-		@media (min-width: 1800px) {
-			@content;
-		}
-	}
+  // Extra Large devices
+  @if $breakpoint == large-desktop {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
 }

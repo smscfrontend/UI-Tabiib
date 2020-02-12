@@ -1,83 +1,87 @@
 .accordion {
-	text-align: left;
-	a {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		padding: 1rem 2rem;
-		color: $text-light;
-		font-size: 1.5rem;
-		font-weight: 400;
+  text-align: left;
+  a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+    color: $text-light;
+    font-size: 1.5rem;
+    font-weight: 400;
 
-		&:hover,
-		&:hover::after {
-			cursor: pointer;
-			color: $primary;
-		}
+    @include respond(basic-desktop) {
+      font-size: 1.3rem;
+    }
 
-		&:hover::after {
-			// border: 1px solid $secondary;
-		}
+    &:hover,
+    &:hover::after {
+      cursor: pointer;
+      color: $primary;
+    }
 
-		&::after {
-			content: '';
-			background-image: url('../assets/accordian-close.png');
-			position: absolute;
-			float: right;
-			right: 1rem;
-			width: 30px;
-			height: 30px;
-			text-align: center;
-			background-repeat: no-repeat;
-			background-size: 70%;
-		}
+    &:hover::after {
+      // border: 1px solid $secondary;
+    }
 
-		&.is-active {
-			color: $primary;
-			border-bottom: 1px solid lighten($grey, 40%);
+    &::after {
+      content: "";
+      background-image: url("../assets/accordian-close.png");
+      position: absolute;
+      float: right;
+      right: 1rem;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-size: 70%;
+    }
 
-			&::after {
-				background-image: url('../assets/accordian-open.png');
-				position: absolute;
-				float: right;
-				right: 1rem;
-				width: 30px;
-				height: 30px;
-				text-align: center;
-				background-repeat: no-repeat;
-				background-size: 70%;
-			}
-		}
-	}
+    &.is-active {
+      color: $primary;
+      border-bottom: 1px solid lighten($grey, 40%);
 
-	&--item {
-		box-shadow: $box-shadow;
-		border-radius: .5rem;
-		border: 1px solid lighten($grey, 40%);
-		margin-bottom: 2rem;
-		background-color: #f9f9f9;
-	}
+      &::after {
+        background-image: url("../assets/accordian-open.png");
+        position: absolute;
+        float: right;
+        right: 1rem;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: 70%;
+      }
+    }
+  }
 
-	&--content {
-		opacity: 0;
-		padding: 0 1rem;
-		max-height: 0;
-		overflow: hidden;
-		clear: both;
-		transition: all 0.03s cubic-bezier(0.19, 1, 0.22, 1);
+  &--item {
+    box-shadow: $box-shadow;
+    border-radius: 0.5rem;
+    border: 1px solid lighten($grey, 40%);
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+  }
 
-		p {
-			font-weight: 400;
-			padding: 1rem;
-			// font-size: 1.35rem;
-		}
+  &--content {
+    opacity: 0;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    clear: both;
+    transition: all 0.03s cubic-bezier(0.19, 1, 0.22, 1);
 
-		&.is-active {
-			opacity: 1;
-			margin: 1rem 0;
-			max-height: 100%;
-			transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-		}
-	}
+    p {
+      font-weight: 400;
+      padding: 1rem;
+      // font-size: 1.35rem;
+    }
+
+    &.is-active {
+      opacity: 1;
+      margin: 1rem 0;
+      max-height: 100%;
+      transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
 }
